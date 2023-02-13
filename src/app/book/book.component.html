@@ -1,0 +1,38 @@
+<p>
+  {{ this.model | json }}
+</p>
+<form #f="ngForm" name="form" (ngSubmit)="addBook()">
+  <div>
+    <input type="text" id="title" name="title" [(ngModel)]="model.title" />
+  </div>
+  <div>
+    <input type="text" id="author" name="author" [(ngModel)]="model.author" />
+  </div>
+  <div>
+    <input type="text" id="price" name="price" [(ngModel)]="model.price" />
+  </div>
+  <input type="submit" class="btn btn-success" value="insert" />
+</form>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TITLE</th>
+      <th>AUTHOR</th>
+      <th>PRICE</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+    </tr>
+  </thead>
+  <!-- tbody -->
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.id }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.price }}</td>
+      <td><button (click)="editBook(book.id)">edit</button></td>
+      <td><button (click)="deleteBook(book.id)">delete</button></td>
+    </tr>
+  </tbody>
+</table>

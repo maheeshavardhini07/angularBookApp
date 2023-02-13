@@ -1,0 +1,19 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+{{name}}
+<div><img [src]="imgurl" /></div>
+<div>
+<button (click)="onSave($event)" >save</button>
+{{btn}}
+</div>
+<div>
+  <input [(ngModel)]="fullname" >
+  {{fullname}}
+</div>
+<div>
+<input [(ngModel)]="user.name" >
+{{user.name}}
+</div>
+
